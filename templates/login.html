@@ -1,0 +1,102 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    {% tailwind_css %}
+</head>
+<body>
+    <main class="mt-[3rem] ">
+
+        <div class="heading">
+            <h1 class="main-heading text-[2rem] text-center text-[#1b1b1b] font-semibold 
+                 sm:text-[2.6rem]
+                "> Welcome to ShiftRides </h1>
+        </div>
+
+
+        <section class="w-[80vw] bg-white mx-auto  rounded-xl mb-10 
+            sm:my-10 
+            ">
+
+            <div class="login-sec flex flex-col justify-center items-center max-w-[21rem] 
+                sm:mx-auto ">
+
+                <div class="login-txt w-full  text-[1.3rem] font-medium  flex justify-center items-center">
+                    <h2>Log in</h2>
+
+                </div>
+                <span class="text-red-600">{% if messages %}
+                    {% for messages in messages %}
+                    {{ messages }}
+                    {% endfor %}
+                    {% endif %}</span>
+
+                <div class="login-username w-full  ">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+
+                        <!-- username for login  -->
+
+                        <input type="text" name="username" id="username" placeholder="username" required class=" w-full my-4  bg-white rounded-lg 
+                            
+                            ">
+
+                        <br>
+
+                        <!-- password for login  -->
+
+                        <input type="password" name="password" id="password" placeholder="Password" required class=" w-full my-4  bg-white rounded-lg 
+                             
+                            ">
+
+                        <br>
+
+
+
+                        <div class="text-center ">
+                            <p class="text-[#9978d2] ">Forgot password?</p>
+                        </div>
+
+                        <br>
+
+                        <!-- submit for login -->
+
+                        <button type="submit"
+                            class="w-full h-8 rounded-sm  drop-shadow-sm mb-8 text-white bg-[#9960fc]">Login</button>
+
+                        <br>
+                        <div class="text-center">
+                            <span>Don't have an account? <a href="{% url 'signup' %}" class="text-[#9978d2]">Sing up</a>
+                            </span>
+                        </div>
+
+
+
+
+                    </form>
+
+                </div>
+                <!-- <div class="h-10rem my-3 relative w-full max-w-[21rem] ">
+                    <hr class="my-5">
+                    <div class="or bg-white  w-[5rem] absolute top-[10px] right-[40%] text-center">
+                        <span class=" ">Or</span>
+                
+                    </div>
+                </div>
+                <div class="text-center w-full max-w-[21rem]">
+    
+                    <button class="w-full h-10 rounded-sm mb-4 text-white bg-[#4070F4]  "> Login with Facebook</button>
+                    <br>
+                    <button class="w-full h-10 rounded-sm text-[#0e0e0e] bg-white border-gray-400 border-2"> Login with
+                        Google</button>
+    
+                </div> -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>
