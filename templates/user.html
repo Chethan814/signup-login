@@ -1,12 +1,19 @@
+{% load static %}
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>succuss</title>
+    {% tailwind_css %}
 </head>
-<body>
-    you logged in successfully <br>
-    <a href="{% url 'logout' %}">click her to log out</a>
+<body class="select-none">
+    <img class="w-full h-[100vh] absolute z-[-1]" src="{% static 'bg.jpg' %}" alt="">
+    <div class="text-center translate-y-[8vw] bg-blue-0">
+            <span class="text-[5vw] text-[#A33A16]  ">You have successfully logged in</span> <br>
+            <a class="text-[3rem] text-[#402E32] underline" href="{% url 'logout' %}">click her to log out</a>
+    </div>
+    
 </body>
 </html>
